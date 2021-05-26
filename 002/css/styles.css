@@ -1,3 +1,4 @@
+/* design system */
 * {
     margin: 0;
     padding: 0;
@@ -14,18 +15,32 @@ body {
 }
 
 
+.page-header h1 {
+    width: 90%;
+    font-size: 2rem;
+    text-align: center
+}
+
+
+@media (min-width: 576px) {
+    .page-header h1 {
+        font-size: 3rem;
+    }
+}
+
+
 .page-header {
     width: 100%;
     height: 100px;
-    font-size: 3em;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: rgba(7, 77, 68, 0.5);
 }
 
 
+/* button style */
 .button {
     color: #fff;
     padding: 10px 25px;
@@ -34,6 +49,7 @@ body {
     outline: none;
     cursor: pointer;
 }
+
 
 #popup-button {
     width: 100px;
@@ -45,22 +61,36 @@ body {
 }
 
 
+/* popup style */
 .popup {
     position: absolute;
-    width: 300px;
+    width: 80%;
     top: 150px;
     left: 0;
     right: 0;
     margin: auto;
-    background: lightgray;
+    background: linear-gradient(120deg, gray, lightgray);
     border: 1px solid #000;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: minmax(50px, auto);
     grid-template-areas:
-    "text text"
-    "delete cancel";
+    "text"
+    "delete"
+    "cancel";
+}
+
+
+@media (min-width: 376px) {
+    .popup {
+        width: 300px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(50px, auto);
+        grid-template-areas:
+        "text text"
+        "delete cancel";
+    }   
 }
 
 
@@ -70,6 +100,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2em;
+    text-align: center;
 }
 
 .delete-area {
@@ -87,7 +118,7 @@ body {
 
 
 .delete-button {
-    background: red;
+    background: linear-gradient(120deg, #ff0078, #ffa0d0);
     border: 1px solid #000;
 }
 
